@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Área de Círculo</title>
+
+
+
+<center><img src="enca.png"></center><br>
+<p><font color="black" size="3" face="tahoma"><center><strong>Elaborado por:</strong>  Jose Antonio Cruz Gutierrez  <strong>Grupo:</strong> 404<strong>Numero de Lista:4</strong><br>
+<strong>Fecha de Elaboracion:</strong> 19 de marzo de 2024.<strong> Hora:</strong>11:40 a.m.
+
+<p><font color="black" size="4" face="tahoma"><center><strong>SCalculadora de Área de Círculo HTML</strong></center><br>
+<style>
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+
+
+
+<table border="2">
+    <tr>
+        <th>Ingrese el radio del círculo:</th>
+        <td><input type="text" id="radius" placeholder="Radio del círculo"></td>
+	<td rowspan="3"> <img src="Circulo.WEBP" width="400" heigth="300"></td>
+    </tr>
+    <tr>
+	<th>Resultado del circulo</th>
+        <td colspan="1"><input type="text" id="result" readonly></td>
+	
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;"><button onclick="calcularArea()">Calcular Área</button></td>
+    </tr>
+
+
+</table>
+
+<script>
+function calcularArea() {
+    var radio = parseFloat(document.getElementById("radius").value);
+    var area = Math.PI * radio * radio;
+    document.getElementById("result").value = "El área es: " + area.toFixed(2);
+	
+}
+</script>
+<center><img src="encabezados.jpg"></center><br>
+</body>
+</html>
