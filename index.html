@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio </title>
+ <link rel="icon" type="favicon.ico" href="icons8_google.ico">
+<style>
+  body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 50px; /* Espacio adicional para el sobresito */
+  }
+  
+  .bulb {
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    margin: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .bulb.on {
+    color: yellow; /* Color del texto encendido */
+  }
+  
+  .heart {
+    font-size: 72px;
+    color: red;
+    margin-top: 20px;
+  }
+  
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .envelope {
+    display: block;
+    width: 80px;
+    margin: 20px auto;
+  }
+</style>
+</head>
+<body>
+  <div class="bulb" id="letterT">T</div>
+  <div class="bulb" id="letterE">E</div>
+  <div class="bulb" id="space"></div>
+  <div class="bulb" id="letterA">A</div>
+  <div class="bulb" id="letterM">M</div>
+  <div class="bulb" id="letterO">O</div>
+  
+  
+ 
+  <a href="Mensaje.html" target="_top">
+    <img src="post-facebook-.png" alt="Sobresito" class="envelope">
+  </a>
+
+<script>
+  let bulbs = document.querySelectorAll('.bulb');
+
+  // Inicia automáticamente el cambio de color
+  bulbs.forEach(bulb => {
+    bulb.interval = setInterval(() => changeColor(bulb), 1000);
+  });
+
+ function changeColor(bulb) {
+    let colors = [
+        '#FF0000', '#0000FF', '#FFFF00', '#FFA500', '#008000', '#800080', '#FF4500', 
+        '#FFCC00', '#ADFF2F', '#00CED1', '#8A2BE2', '#C71585', '#FFFFFF', '#000000', 
+        '#808080', '#DC143C', '#FF2400', '#8B0000', '#9B111E', '#FC5A8D', '#DE3163', 
+        '#87CEEB', '#000080', '#40E0D0', '#0047AB', '#0F52BA', '#4B0082', '#FFF44F', 
+        '#FFD700', '#FFDB58', '#CC7722', '#FFEF00', '#FFFF99', '#50C878', '#808000', 
+        '#98FF98', '#00FF00', '#228B22', '#93C572', '#FF8243', '#FF7F50', '#FFBF00', 
+        '#FFDAB9', '#B87333', '#E6E6FA', '#8B00FF', '#800080', '#614051', '#C8A2C8', 
+        '#FFD1DC', '#AEC6CF', '#77DD77', '#FDFD96', '#B39EB5', '#964B00', '#F5F5DC', 
+        '#E2725B', '#A0522D', '#C3B091', '#FFC0CB', '#FF00FF', '#00FFFF', '#30D5C8', 
+        '#C0C0C0', '#FFD700'
+    ]; // Colores disponibles más vibrantes
+    let randomColor = colors[Math.floor(Math.random() * colors.length)];
+    bulb.style.color = randomColor;
+  }
+
+  // Aplica efecto de iluminación a "Dani" también
+  let nameBulb = document.getElementById('name');
+  nameBulb.interval = setInterval(() => changeColor(nameBulb), 1000);
+</script>
+</body>
+</html>
